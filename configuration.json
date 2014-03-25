@@ -1,0 +1,10 @@
+{
+  "db": "database_name",
+  "cookie": "cookie_name",
+  "port": 3051,
+  "facebook": {
+    "clientID": 1234,
+    "clientSecret": "apisecret",
+    "callbackURL": "http://domain.com/auth/facebook/callback"
+  }
+}

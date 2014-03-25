@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+
+    <title>title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+    <script src="/js/build.js"></script>
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-header pull-left">
+        <a class="navbar-brand" href="/">title</a>
+      </div>
+
+      <div class="pull-right">
+        <ul class="nav navbar-nav">
+          <%
+          if(loggedin) {
+          %>
+            <li><a href="/logout">Logout</a></li>
+          <%
+          } else {
+          %>
+            <li><a href="/auth/facebook">Login with Facebook</a></li>
+          <%
+          }
+          %>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="content" ng-view>
