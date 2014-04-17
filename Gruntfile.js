@@ -46,9 +46,17 @@ module.exports = function(grunt) {
         }
     },
     watch: {
-      src: {
-        files: ['coffeescript/**/*.coffee', 'less/*.less', 'Gruntfile.js'], // Remove Gruntfile.js if it's in coffeescript to avoid infinite loop
-        tasks: ['default']
+      coffee: {
+        files: ['coffeescript/**/*.coffee'],
+        tasks: ['coffee', 'ngtemplates', 'concat']
+      },
+      templates: {
+        files: ['public/views/**/*'],
+        tasks: ['ngtemplates', 'concat']
+      },
+      less: {
+        files: ['less/*.less'],
+        tasks: ['less']
       }
     },
     concat: {
